@@ -1,0 +1,23 @@
+#!/bin/bash
+
+TIME=$(date +"%b%d-%Y-%H%M%S")
+FILENAME=LOGS_BACKUP-$TIME.tar.gz
+SRCDIR=log_rotation-$TIME
+DESDIR=/opt/var/log/weblogic/server/logbase
+CD=/opt/var/log/weblogic/server
+
+mv /opt/var/log/weblogic/server/log_rotation /opt/var/log/weblogic/server/log_rotation-$TIME
+cd $CD
+tar -cpzf $DESDIR/$FILENAME $SRCDIR
+rm -r $SRCDIR
+mkdir -m777 log_rotation
+
+SRCDIR1=log_rotation-$TIME
+DESDIR1=/opt3/var/log/weblogic/server/logbase
+CD1=/opt3/var/log/weblogic/server
+
+mv /opt3/var/log/weblogic/server/log_rotation /opt3/var/log/weblogic/server/log_rotation-$TIME
+cd $CD1
+tar -cpzf $DESDIR1/$FILENAME $SRCDIR1
+rm -rf $SRCDIR1
+mkdir -m777 log_rotation
