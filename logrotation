@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TIME=$(date +"%b%d-%Y-%H%M%S")
+#TIME=$(date +"%b%d-%Y-%H%M%S")
 FILENAME=LOGS_BACKUP-$TIME.tar.gz
 SRCDIR=log_rotation-$TIME
 DESDIR=/opt/var/log/weblogic/server/logbase
